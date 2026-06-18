@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: silver_riyasewana_listings
+    columns:
+      - name: listing_url
+        tests:
+          - not_null
+          - unique
+
+      - name: title
+        tests:
+          - not_null
