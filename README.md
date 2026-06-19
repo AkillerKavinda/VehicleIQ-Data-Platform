@@ -14,6 +14,22 @@ This project demonstrates modern data engineering practices including web scrapi
 
 ---
 
+# Project Screenshots
+
+## Airflow DAG
+
+The Airflow DAG orchestrates the complete workflow from web scraping to data transformation and testing.
+
+![Airflow DAG](docs/images/airflow_dag.png)
+
+## PostgreSQL Medallion Tables
+
+The PostgreSQL database follows the Medallion Architecture pattern using Bronze, Silver, and Gold layers.
+
+![PostgreSQL Medallion Tables](docs/images/postgres_tables.png)
+
+---
+
 # Architecture
 
 ```text
@@ -75,6 +91,11 @@ VehicleIQ-Data-Platform/
 │
 ├── scrapers/
 │   └── scrape_riyasewana.py
+│
+├── docs/
+│   └── images/
+│       ├── airflow_dag.png
+│       └── postgres_tables.png
 │
 ├── Dockerfile
 ├── docker-compose.yml
@@ -306,7 +327,7 @@ This project demonstrates:
 # Future Improvements
 
 * Incremental loading
-* PostgreSQL Docker container
+* PostgreSQL containerization
 * Dashboard development
 * CI/CD pipeline
 * Cloud deployment
@@ -318,4 +339,3 @@ This project demonstrates:
 # Author
 
 **Akila Kavinda**
-
