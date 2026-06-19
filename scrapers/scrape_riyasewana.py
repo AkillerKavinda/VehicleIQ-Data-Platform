@@ -6,7 +6,7 @@ import pandas as pd
 from datetime import datetime
 
 BASE_URL = "https://riyasewana.com/search/cars"
-MAX_PAGES = 396
+MAX_PAGES = 3
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -84,4 +84,4 @@ df = df.drop_duplicates(subset=["listing_url"])
 print(df.head())
 print("Total listings:", len(df))
 
-df.to_csv("riyasewana_all_listings.csv", index=False)
+df.to_csv("data/riyasewana_all_listings.csv", index=False)

@@ -12,6 +12,14 @@ with DAG(
     schedule=None,
     catchup=False,
 ) as dag:
+    
+    scrape_riyasewana = BashOperator(
+    task_id="scrape_riyasewana",
+    bash_command=f"""
+    cd {PROJECT_DIR} &&
+    python scrapers/scrape_riyasewana.py
+    """,
+    )
 
     load_to_bronze = BashOperator(
         task_id="load_to_bronze",
@@ -37,4 +45,4 @@ with DAG(
         """,
     )
 
-    load_to_bronze >> run_dbt_models >> run_dbt_tests
+scrape_riyasewana >> load_to_bronze >> run_dbt_models >> run_dbt_tests
