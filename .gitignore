@@ -9,3 +9,6 @@ wheels/
 # Virtual environments
 .venv
 .env
+dbt_vehicleiq/.dbt/
+logs/
+*.log
