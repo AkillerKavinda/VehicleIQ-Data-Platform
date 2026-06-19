@@ -27,8 +27,7 @@ def main():
 
     df = pd.read_csv(CSV_PATH)
 
-    df["loaded_at"] = pd.Timestamp.now()
-
+    df["loaded_at"] = pd.Timestamp.now(tz="Asia/Colombo").tz_localize(None) 
     with engine.begin() as connection:
         connection.execute(text("CREATE SCHEMA IF NOT EXISTS bronze;"))
 
